@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbmoviereservationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_cancelallreservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_cancelreservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="reservation_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_checkcinema" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cinema_id" Type="tinyint" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_checkmovie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="movie_id" Type="int" Mode="In" />
+          <Parameter Name="title" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_checkschedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+          <Parameter Name="cinema_id" Type="tinyint" Mode="In" />
+          <Parameter Name="date_time" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="sp_checkschedulecount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+          <Parameter Name="cinema_id" Type="tinyint" Mode="In" />
+          <Parameter Name="date_time" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="sp_getcinemas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cinema_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getcinemaschedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cinema_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getcinemaseats" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_gethistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_gethistoryseats" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getmovies" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="movie_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getnewmovieid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getnowshowing" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getschedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_savecinema" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cinema_id" Type="int" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="seat_count" Type="int" Mode="In" />
+          <Parameter Name="default_price" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="sp_savemovie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="movie_id" Type="int" Mode="In" />
+          <Parameter Name="title" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="imgtype" Type="varchar" Mode="In" />
+          <Parameter Name="default_price" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="sp_savereservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+          <Parameter Name="customer_name" Type="varchar" Mode="In" />
+          <Parameter Name="total" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="sp_savereservationdetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="reservation_id" Type="int" Mode="In" />
+          <Parameter Name="seat_id" Type="int" Mode="In" />
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_saveschedule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+          <Parameter Name="movie_id" Type="int" Mode="In" />
+          <Parameter Name="cinema_id" Type="tinyint" Mode="In" />
+          <Parameter Name="price" Type="numeric" Mode="In" />
+          <Parameter Name="date_time" Type="smalldatetime" Mode="In" />
+        </Function>
+        <Function Name="sp_saveseat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="seat_id" Type="int" Mode="In" />
+          <Parameter Name="cinema_id" Type="tinyint" Mode="In" />
+          <Parameter Name="row" Type="tinyint" Mode="In" />
+          <Parameter Name="col" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="sp_updateusedreservation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="schedule_id" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="dbmoviereservationModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbmoviereservationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="dbmoviereservationEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="sp_cancelallreservation">
+          <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_cancelreservation">
+          <Parameter Name="reservation_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_checkcinema" ReturnType="Collection(Int32)">
+            <Parameter Name="cinema_id" Mode="In" Type="Byte" />
+            <Parameter Name="description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_checkmovie" ReturnType="Collection(Int32)">
+            <Parameter Name="movie_id" Mode="In" Type="Int32" />
+            <Parameter Name="title" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_checkschedule" ReturnType="Collection(Int32)">
+            <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+            <Parameter Name="cinema_id" Mode="In" Type="Byte" />
+            <Parameter Name="date_time" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getcinemas" ReturnType="Collection(dbmoviereservationModel.sp_getcinemas_Result)">
+          <Parameter Name="cinema_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getcinemaschedules" ReturnType="Collection(dbmoviereservationModel.sp_getcinemaschedules_Result)">
+          <Parameter Name="cinema_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getcinemaseats" ReturnType="Collection(dbmoviereservationModel.sp_getcinemaseats_Result)">
+          <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_gethistory" ReturnType="Collection(dbmoviereservationModel.sp_gethistory_Result)">
+          <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_gethistoryseats" ReturnType="Collection(dbmoviereservationModel.sp_gethistoryseats_Result)">
+          <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getmovies" ReturnType="Collection(dbmoviereservationModel.sp_getmovies_Result)">
+          <Parameter Name="movie_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getnewmovieid" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="sp_getnowshowing" ReturnType="Collection(dbmoviereservationModel.sp_getnowshowing_Result)" />
+          <FunctionImport Name="sp_getschedules" ReturnType="Collection(dbmoviereservationModel.sp_getschedules_Result)">
+          <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_savecinema" ReturnType="Collection(dbmoviereservationModel.sp_savecinema_Result)">
+            <Parameter Name="cinema_id" Mode="In" Type="Int32" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="seat_count" Mode="In" Type="Int32" />
+            <Parameter Name="default_price" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_savemovie" ReturnType="Collection(Int32)">
+            <Parameter Name="movie_id" Mode="In" Type="Int32" />
+            <Parameter Name="title" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="imgtype" Mode="In" Type="String" />
+            <Parameter Name="default_price" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_savereservation" ReturnType="Collection(Int32)">
+            <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+            <Parameter Name="customer_name" Mode="In" Type="String" />
+            <Parameter Name="total" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_saveschedule" ReturnType="Collection(Int32)">
+            <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+            <Parameter Name="movie_id" Mode="In" Type="Int32" />
+            <Parameter Name="cinema_id" Mode="In" Type="Byte" />
+            <Parameter Name="price" Mode="In" Type="Decimal" />
+            <Parameter Name="date_time" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_saveseat" ReturnType="Collection(Int32)">
+            <Parameter Name="seat_id" Mode="In" Type="Int32" />
+            <Parameter Name="cinema_id" Mode="In" Type="Byte" />
+            <Parameter Name="row" Mode="In" Type="Byte" />
+            <Parameter Name="col" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="sp_updateusedreservation">
+          <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_checkschedulecount" ReturnType="Collection(Int32)">
+            <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+            <Parameter Name="cinema_id" Mode="In" Type="Byte" />
+            <Parameter Name="date_time" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="sp_savereservationdetail" ReturnType="Collection(Int32)">
+            <Parameter Name="reservation_id" Mode="In" Type="Int32" />
+            <Parameter Name="seat_id" Mode="In" Type="Int32" />
+            <Parameter Name="schedule_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_getcinemas_Result">
+          <Property Type="Int32" Name="cinema_id" Nullable="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="seat_count" Nullable="false" />
+          <Property Type="Decimal" Name="default_price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="schedule_count" Nullable="true" />
+          <Property Type="Int32" Name="reserved" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getcinemaschedules_Result">
+          <Property Type="Int32" Name="schedule_id" Nullable="false" />
+          <Property Type="Int32" Name="movie_id" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="date_time" Nullable="false" Precision="16" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="imgtype" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="imgurl" Nullable="true" MaxLength="35" />
+        </ComplexType>
+        <ComplexType Name="sp_getcinemaseats_Result">
+          <Property Type="Int32" Name="seat_id" Nullable="false" />
+          <Property Type="Byte" Name="row" Nullable="false" />
+          <Property Type="Byte" Name="col" Nullable="false" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_gethistory_Result">
+          <Property Type="Int32" Name="reservation_id" Nullable="false" />
+          <Property Type="DateTime" Name="date_reserved" Nullable="false" Precision="16" />
+          <Property Type="String" Name="customer_name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="seats" Nullable="false" MaxLength="1" />
+          <Property Type="DateTime" Name="date_cancelled" Nullable="false" Precision="16" />
+          <Property Type="DateTime" Name="date_time" Nullable="false" Precision="16" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_gethistoryseats_Result">
+          <Property Type="Int32" Name="reservation_id" Nullable="false" />
+          <Property Type="Byte" Name="row" Nullable="false" />
+          <Property Type="Byte" Name="col" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getmovies_Result">
+          <Property Type="Int32" Name="movie_id" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="imgtype" Nullable="false" MaxLength="5" />
+          <Property Type="Decimal" Name="default_price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="reserved" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getnowshowing_Result">
+          <Property Type="Int32" Name="cinema_id" Nullable="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="seat_count" Nullable="true" />
+          <Property Type="Int32" Name="schedule_id" Nullable="false" />
+          <Property Type="Int32" Name="movie_id" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="date_time" Nullable="false" Precision="16" />
+          <Property Type="String" Name="movietitle" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="moviedescription" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="imgtype" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="sp_getschedules_Result">
+          <Property Type="Int32" Name="schedule_id" Nullable="false" />
+          <Property Type="Int32" Name="movie_id" Nullable="false" />
+          <Property Type="Byte" Name="cinema_id" Nullable="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="date_time" Nullable="false" Precision="16" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="6" />
+          <Property Type="Int32" Name="reserved_count" Nullable="false" />
+          <Property Type="Int32" Name="reserved" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_savecinema_Result">
+          <Property Type="Int32" Name="cinema_id" Nullable="true" />
+          <Property Type="Int32" Name="row" Nullable="true" />
+          <Property Type="Int32" Name="col" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbmoviereservationModelStoreContainer" CdmEntityContainer="dbmoviereservationEntities" >
+          <FunctionImportMapping FunctionImportName="sp_cancelallreservation" FunctionName="dbmoviereservationModel.Store.sp_cancelallreservation" />
+          <FunctionImportMapping FunctionImportName="sp_cancelreservation" FunctionName="dbmoviereservationModel.Store.sp_cancelreservation" />
+          <FunctionImportMapping FunctionImportName="sp_checkcinema" FunctionName="dbmoviereservationModel.Store.sp_checkcinema" />
+          <FunctionImportMapping FunctionImportName="sp_checkmovie" FunctionName="dbmoviereservationModel.Store.sp_checkmovie" />
+          <FunctionImportMapping FunctionImportName="sp_checkschedule" FunctionName="dbmoviereservationModel.Store.sp_checkschedule" />
+          <FunctionImportMapping FunctionImportName="sp_getcinemas" FunctionName="dbmoviereservationModel.Store.sp_getcinemas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_getcinemas_Result">
+                <ScalarProperty Name="cinema_id" ColumnName="cinema_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="seat_count" ColumnName="seat_count" />
+                <ScalarProperty Name="default_price" ColumnName="default_price" />
+                <ScalarProperty Name="schedule_count" ColumnName="schedule_count" />
+                <ScalarProperty Name="reserved" ColumnName="reserved" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getcinemaschedules" FunctionName="dbmoviereservationModel.Store.sp_getcinemaschedules">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_getcinemaschedules_Result">
+                <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+                <ScalarProperty Name="movie_id" ColumnName="movie_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="date_time" ColumnName="date_time" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="imgtype" ColumnName="imgtype" />
+                <ScalarProperty Name="imgurl" ColumnName="imgurl" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getcinemaseats" FunctionName="dbmoviereservationModel.Store.sp_getcinemaseats">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_getcinemaseats_Result">
+                <ScalarProperty Name="seat_id" ColumnName="seat_id" />
+                <ScalarProperty Name="row" ColumnName="row" />
+                <ScalarProperty Name="col" ColumnName="col" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_gethistory" FunctionName="dbmoviereservationModel.Store.sp_gethistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_gethistory_Result">
+                <ScalarProperty Name="reservation_id" ColumnName="reservation_id" />
+                <ScalarProperty Name="date_reserved" ColumnName="date_reserved" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="seats" ColumnName="seats" />
+                <ScalarProperty Name="date_cancelled" ColumnName="date_cancelled" />
+                <ScalarProperty Name="date_time" ColumnName="date_time" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="title" ColumnName="title" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_gethistoryseats" FunctionName="dbmoviereservationModel.Store.sp_gethistoryseats">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_gethistoryseats_Result">
+                <ScalarProperty Name="reservation_id" ColumnName="reservation_id" />
+                <ScalarProperty Name="row" ColumnName="row" />
+                <ScalarProperty Name="col" ColumnName="col" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getmovies" FunctionName="dbmoviereservationModel.Store.sp_getmovies">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_getmovies_Result">
+                <ScalarProperty Name="movie_id" ColumnName="movie_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="imgtype" ColumnName="imgtype" />
+                <ScalarProperty Name="default_price" ColumnName="default_price" />
+                <ScalarProperty Name="reserved" ColumnName="reserved" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getnewmovieid" FunctionName="dbmoviereservationModel.Store.sp_getnewmovieid" />
+          <FunctionImportMapping FunctionImportName="sp_getnowshowing" FunctionName="dbmoviereservationModel.Store.sp_getnowshowing">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_getnowshowing_Result">
+                <ScalarProperty Name="cinema_id" ColumnName="cinema_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="seat_count" ColumnName="seat_count" />
+                <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+                <ScalarProperty Name="movie_id" ColumnName="movie_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="date_time" ColumnName="date_time" />
+                <ScalarProperty Name="movietitle" ColumnName="movietitle" />
+                <ScalarProperty Name="moviedescription" ColumnName="moviedescription" />
+                <ScalarProperty Name="imgtype" ColumnName="imgtype" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getschedules" FunctionName="dbmoviereservationModel.Store.sp_getschedules">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_getschedules_Result">
+                <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+                <ScalarProperty Name="movie_id" ColumnName="movie_id" />
+                <ScalarProperty Name="cinema_id" ColumnName="cinema_id" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="date_time" ColumnName="date_time" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="reserved_count" ColumnName="reserved_count" />
+                <ScalarProperty Name="reserved" ColumnName="reserved" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_savecinema" FunctionName="dbmoviereservationModel.Store.sp_savecinema">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbmoviereservationModel.sp_savecinema_Result">
+                <ScalarProperty Name="cinema_id" ColumnName="cinema_id" />
+                <ScalarProperty Name="row" ColumnName="row" />
+                <ScalarProperty Name="col" ColumnName="col" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_savemovie" FunctionName="dbmoviereservationModel.Store.sp_savemovie" />
+          <FunctionImportMapping FunctionImportName="sp_savereservation" FunctionName="dbmoviereservationModel.Store.sp_savereservation" />
+          <FunctionImportMapping FunctionImportName="sp_saveschedule" FunctionName="dbmoviereservationModel.Store.sp_saveschedule" />
+          <FunctionImportMapping FunctionImportName="sp_saveseat" FunctionName="dbmoviereservationModel.Store.sp_saveseat" />
+          <FunctionImportMapping FunctionImportName="sp_updateusedreservation" FunctionName="dbmoviereservationModel.Store.sp_updateusedreservation" />
+          <FunctionImportMapping FunctionImportName="sp_checkschedulecount" FunctionName="dbmoviereservationModel.Store.sp_checkschedulecount" />
+          <FunctionImportMapping FunctionImportName="sp_savereservationdetail" FunctionName="dbmoviereservationModel.Store.sp_savereservationdetail" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
